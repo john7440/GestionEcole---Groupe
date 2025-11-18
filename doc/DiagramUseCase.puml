@@ -1,45 +1,22 @@
 @startuml
 'https://plantuml.com/use-case-diagram
+left to right direction
 
 :Teacher : as Teacher
 :Student : as Student
-:Admin : as Admin
+:Director : as Director
 
-package System{
-left to right direction
-:Student: --> (gérer les adresses)
-:Teacher: --> (gérer les élèves)
-:Teacher: --> (gérer les cours)
-
-:Admin: --> :Teacher:
-:Admin: --> :Student:
-:Admin: --> (gérer les enseignants)
-
-
-(gérer les élèves) --> (ajouter un élève)
-(gérer les élèves) --> (supprimer un élève)
-(gérer les élèves) --> (modifier un élève)
-(gérer les élèves) --> (afficher un élève)
-
-
-(gérer les enseignants) --> (ajouter un enseignant)
-(gérer les enseignants) --> (supprimer un enseignant)
-(gérer les enseignants) --> (modifier un enseignant)
-(gérer les enseignants) --> (afficher un enseignant)
-
-(gérer les cours) --> (ajouter un cours)
-(gérer les cours) --> (supprimer un cours)
-(gérer les cours) --> (modifier un cours)
-(gérer les cours) --> (afficher un cours)
-(gérer les cours) --> (inscrire un élève)
-(gérer les cours) --> (désinscrire un élève)
-(gérer les cours) --> (consulter les cours d'un élève)
-(gérer les cours) --> (consulter les élèves d'un cours)
-
-(gérer les adresses) --> (ajouter une adresse)
-(gérer les adresses) --> (supprimer une adresse)
-(gérer les adresses) --> (modifier une adresse)
-(gérer les adresses) --> (afficher une adresse)
+package View{
+:Teacher: --> (consulter les élèves)
+:Teacher: --> (consulter les cours)
+:Student: --> (consulter les cours)
+}
+package Manage{
+    :Director: --> (gérer les enseignants)
+    :Director: --> (gérer les élèves)
+    :Director: --> (gérer les cours)
+    (gérer les enseignants) --> (gérer les adresses) : <<extend>>
+    (gérer les élèves) --> (gérer les adresses) : <<extend>>
 
 }
 @enduml
