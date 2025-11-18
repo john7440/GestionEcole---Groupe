@@ -3,14 +3,24 @@
 
 :Teacher : as Teacher
 :Student : as Student
-
+:Admin : as Admin
 
 package System{
+left to right direction
+:Student: --> (gérer les adresses)
+:Teacher: --> (gérer les élèves)
+:Teacher: --> (gérer les cours)
+
+:Admin: --> :Teacher:
+:Admin: --> :Student:
+:Admin: --> (gérer les enseignants)
+
 
 (gérer les élèves) --> (ajouter un élève)
 (gérer les élèves) --> (supprimer un élève)
 (gérer les élèves) --> (modifier un élève)
 (gérer les élèves) --> (afficher un élève)
+
 
 (gérer les enseignants) --> (ajouter un enseignant)
 (gérer les enseignants) --> (supprimer un enseignant)
