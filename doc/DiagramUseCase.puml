@@ -6,17 +6,16 @@ left to right direction
 :Student : as Student
 :Director : as Director
 
-package View{
-:Teacher: --> (consulter les élèves)
+package System{
+
+:Director: --> (gérer les enseignants)
+:Director: --> (gérer les élèves)
+:Director: --> (gérer les cours)
+(gérer les enseignants) <-- (gérer les adresses) : <<extend>>
+(gérer les élèves) <-- (gérer les adresses) : <<extend>>
+(consulter les cours) <-- (consulter les élèves) : <<extend>>
 :Teacher: --> (consulter les cours)
 :Student: --> (consulter les cours)
-}
-package Manage{
-    :Director: --> (gérer les enseignants)
-    :Director: --> (gérer les élèves)
-    :Director: --> (gérer les cours)
-    (gérer les enseignants) --> (gérer les adresses) : <<extend>>
-    (gérer les élèves) --> (gérer les adresses) : <<extend>>
 
 }
 @enduml
