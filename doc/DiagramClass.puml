@@ -31,7 +31,6 @@ class Teacher extends Person{
 
 class Course{
     name : String
-    classroom : String
     teacher : Teacher
     startDate : Date
     endDate : Date
