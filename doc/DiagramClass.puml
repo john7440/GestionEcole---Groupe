@@ -1,0 +1,48 @@
+@startuml
+
+abstract class  Person{
+    firstName : String
+    lastName : String
+    age : Int
+    address : Address
+
+    Person : Person()
+}
+
+class Address{
+    street : String
+    city : String
+    zipCode: int
+
+    Address : Address()
+}
+
+class Student extends Person{
+    id : int
+
+    Student : Student()
+}
+
+class Teacher extends Person{
+    arrivalDate : Date
+
+    Teacher : Teacher()
+}
+
+class Course{
+    name : String
+    classroom : String
+    teacher : Teacher
+    startDate : Date
+    endDate : Date
+    students : List<Student>
+
+    Course : Course()
+}
+
+Person "1 " o--- "1" Address
+Course "0..*" -- "1" Teacher
+Course "0..*" --- "1..*" Student
+
+
+@enduml
