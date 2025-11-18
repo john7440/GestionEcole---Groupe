@@ -41,7 +41,7 @@ class Course{
 }
 
 Person "1..*" o--- "1" Address
-Course "0..*" ---- "1" Teacher
+Course "1..*" ---- "1" Teacher
 Course "0..*" ---- "1..*" Student
 
 
