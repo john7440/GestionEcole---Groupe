@@ -1,0 +1,33 @@
+Element;;;;Description;;;;;;;
+Nom du cas d'utilisation;;;;Gérer les adresses;;;;;;;
+But/Objectif;;;;Ajouter/Modifier/Supprimer/Consulter des adresses des personnes;;;;;;;
+Acteur Principal;;;;Directeur;;;;;;;
+Acteur Secondaire;;;;Elève/Professeur;;;;;;;
+Préconditions;;;;La personne posséde bien une adresse;;;;;;;
+;;;;;;;;;;;
+Scénario Principal;;;;"1. Le directeur créé soit un un élève, soit un professeur avec ses informations
+2. Il lui renseigne son adresse
+3. Ajouter la personne crée soit à la liste des élèves soit à la liste des professeurs";;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+Scénarios Alternatifs;;;;"Le nom depasse le nombre de caracteres  -> message d'erreur, possibilité de réessayer
+Le prenom depasse le nombre de caracteres  -> message d'erreur, possibilité de réessayer
+Le age depasse l'age maximum  -> message d'erreur, possibilité de réessayer
+La rue depasse le nombre de caracteres  -> message d'erreur, possibilité de réessayer
+Le ville depasse le nombre de caracteres  -> message d'erreur, possibilité de réessayer
+Le code postal  contient plus de 5 caracteres  -> message d'erreur, possibilité de réessayer";;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+Postconditions;;;;"L'adresse est valide
+- Elle est ajoutée a la liste des adresses";;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
