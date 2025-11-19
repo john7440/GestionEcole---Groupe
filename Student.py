@@ -1,9 +1,10 @@
+from abc import ABC
 from dataclasses import dataclass
 from Person import Person
 
 
 @dataclass
-class Student(Person):
+class Student(Person, ABC):
     """
     Classe représentant un étudiant.
     """
