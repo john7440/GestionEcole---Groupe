@@ -2,7 +2,7 @@ from abc import ABC
 from dataclasses import dataclass
 from typing import ClassVar, List
 
-from Person import Person
+from person import Person
 
 
 @dataclass
@@ -10,7 +10,6 @@ class Student(Person, ABC):
     """
     Classe représentant un étudiant.
     """
-
     id: int
     students: ClassVar[List['Student']] = []
 
@@ -33,16 +32,15 @@ class Student(Person, ABC):
     @classmethod
     def nb_students(cls) -> int:
         """
-        Permet de l'affichage du nombre d' eleves passés ce jour
-        :return: nombre d'eleves passés ce jour
+        Permet de l'affichage du nombre d'élèves passé ce jour
+        :return: nombre d'élèves passés ce jour
         """
         return len(cls.students)
-
 
     @classmethod
     def print_students(cls) -> None:
         """
-        Affiche la liste des eleves passés aujourd'hui
+        Affiche la liste des élèves passés aujourd'hui
         :return: None
         """
         if not cls.students:
@@ -51,5 +49,5 @@ class Student(Person, ABC):
             print(f"\nListe des {Student.nb_students()} eleves passés aujourd'hui :")
             print("-" * 40)
             for i, student in enumerate(cls.students, start=1):
-                print(f"{student.id_customer}. {student.firstname} {student.lastname}")
+                print(f"{student.id}. {student.firstName} {student.lastName} - {student.age} ans - {student.address}")
             print("-" * 40)

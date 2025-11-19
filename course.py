@@ -3,8 +3,8 @@ from datetime import datetime, date
 from dataclasses import dataclass, field
 from typing import List
 
-from Teacher import Teacher
-from Student import Student
+from teacher import Teacher
+from student import Student
 
 
 @dataclass
