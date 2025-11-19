@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 from dataclasses import dataclass
 from abc import ABC
-
-from address import Address
+import address
 
 
 @dataclass
@@ -21,7 +20,7 @@ class Person(ABC):
     firstName: str
     lastName: str
     age: int
-    address: Address
+    address: address
 
     def __str__(self) -> str:
         """

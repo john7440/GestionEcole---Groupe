@@ -1,4 +1,4 @@
-from abc import ABC
+
 from dataclasses import dataclass
 from typing import ClassVar, List
 
@@ -6,7 +6,7 @@ from person import Person
 
 
 @dataclass
-class Student(Person, ABC):
+class Student(Person):
     """
     Classe représentant un étudiant.
     """
