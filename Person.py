@@ -12,3 +12,8 @@ class Person:
         name : nom de la personne
         age : âge de la personne
     """
+
+    firstName: str
+    lastName: str
+    age: int
+    """ adress : Adress"""
