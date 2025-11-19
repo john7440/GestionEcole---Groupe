@@ -27,28 +27,28 @@ class Teacher(Person, ABC):
         :param teacher: Instance de teacher à ajouter
         :return: L'objet teacher ajouté
         """
-        cls.students.append(teacher)
+        cls.teachers.append(teacher)
         return teacher
 
     @classmethod
-    def nb_students(cls) -> int:
+    def nb_teachers(cls) -> int:
         """
         Permet de l'affichage du nombre d'élèves passé ce jour
         :return: nombre d'élèves passés ce jour
         """
-        return len(cls.students)
+        return len(cls.teachers)
 
     @classmethod
-    def print_students(cls) -> None:
+    def print_teachers(cls) -> None:
         """
         Affiche la liste des élèves passés aujourd'hui
         :return: None
         """
-        if not cls.students:
-            print("Il n'y a aucun eleve.")
+        if not cls.teachers:
+            print("Il n'y a aucun professeur.")
         else:
-            print(f"\nListe des {Student.nb_students()} eleves passés aujourd'hui :")
+            print(f"\nListe des {Teacher.nb_teachers()} professeurs :")
             print("-" * 40)
-            for i, student in enumerate(cls.students, start=1):
-                print(f"{student.id}. {student.firstName} {student.lastName} - {student.age} ans - {student.address}")
+            for i, student in enumerate(cls.teachers, start=1):
+                print(f"{Teacher.firstName}. {Teacher.lastName} {Teacher.age} - {Teacher.address} ans - {Teacher.arrivalDate}")
             print("-" * 40)
