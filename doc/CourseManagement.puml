@@ -2,24 +2,27 @@
 actor Directeur
 actor Enseignant
 participant "Système Cours" as SC
-participant "Module Validation" as MV
-participant "Module Disponibilité" as MD
-participant "Planning des cours" as PL
 
+
+activate Directeur
 Directeur -> SC: Saisir infos cours
-SC -> MV : Vérifier la saisie
-MV --> SC: Résultat validation
+activate SC
+SC -> SC : Vérifier la saisie
+SC --> SC: Résultat validation
 
-SC -> MD : Vérifier disponibilité professeur
-MD --> SC : Résultat disponibilité
+activate Enseignant
+SC -> Enseignant : Vérifier disponibilité professeur
+Enseignant --> SC : Résultat disponibilité
 
 alt Professeur disponible
     SC -> Enseignant : Notification nouveau cours
-    SC -> PL : Ajouter cours au planning
+    SC -> SC : Ajouter cours au planning
+    deactivate Enseignant
     SC --> Directeur : Confirmation création
+
 else
     SC --> Directeur : Message erreur (prof indisponible)
 end
-
+Deactivate SC
 
 @enduml

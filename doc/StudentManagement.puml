@@ -2,19 +2,24 @@
 actor Eleve
 participant "Système d'inscription" as SI
 participant "Adresse"
-participant "Liste etudiants" as Carnet
 actor "Directeur"
+participant "Cours"
 
+activate Eleve
+activate SI
 Eleve -> SI : saisir données personnelles
+activate Adresse
 SI -> Adresse : saisir adresse
-Adresse -> SI : valider format code postal
+Adresse -> Adresse : valider format code postal
 Adresse --> SI : résultat validation
+Deactivate Adresse
 
 alt Adresse valide
+activate Directeur
     SI -> Directeur : demande d'autorisation
     Directeur --> SI : autorisé / refusé
     alt Autorisé
-        SI -> Carnet : ajouter élève et adresse
+        SI -> SI : ajouter élève et adresse
         SI --> Eleve : confirmation d'inscription
     else Refusé
         SI --> Eleve : inscription refusée
@@ -22,4 +27,8 @@ alt Adresse valide
 else Adresse invalide
     SI --> Eleve : message d'erreur de saisie adresse
 end
+
+Directeur -> Cours : assignation de l'élève a des cours
+
+
 @enduml
