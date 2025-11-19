@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from dataclasses import dataclass
-from abc import ABC, abstractmethod
+from abc import ABC
 
 from address import Address
 
@@ -22,10 +22,6 @@ class Person(ABC):
     lastName: str
     age: int
     address: Address
-
-    @abstractmethod
-    def add_address(self) -> str:
-        pass
 
     def __str__(self) -> str:
         """
