@@ -13,13 +13,14 @@ class Address{
     - street : String
     - city : String
     - zipCode: int
+    - List<Person>
 
     + Address : Address()
 }
 
 class Student extends Person{
     - id : int
-
+    - List<Cours>
     + Student : Student()
 }
 
