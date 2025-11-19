@@ -14,3 +14,8 @@ class Course:
     end_date: datetime
     teacher: Teacher
     students: List[Student] = field(default_factory=list)
+
+    def __str__(self) -> str:
+        return (f"Intitulé du cours : {self.name}, début : {self.start_date}, fin : {self.end_date}, "
+                f"professeur :{self.teacher}, étudiants inscrits:{self.students} ")
+
