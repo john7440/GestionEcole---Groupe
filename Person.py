@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from dataclasses import dataclass
+from abc import ABC, abstractmethod
 
 from address import Address
 
 
 @dataclass
-class Person:
+class Person(ABC):
     """
-    Classe représentant une person
+    Classe représentant une personne (abstraite)
 
     Attributs :
         firstName : prénom de la personne
@@ -22,16 +23,19 @@ class Person:
     age: int
     address: Address
 
+    @abstractmethod
+    def add_address(self) -> str:
+        pass
+
     def __str__(self) -> str:
         """
-        Permet de configurer l'affichage d'une personne peu importe son ty
-        :return: Prenom, nom, age et adresse de la personne
+        Permet de configurer l'affichage d'une personne peu importe son type.
         """
-        return f"{self.firstName} {self.lastName} {self.age} {self.address}"
+        return f"{self.firstName} {self.lastName}, {self.age} ans, {self.address}"
 
     def __repr__(self) -> str:
         """
-        Permet de configurer l'affichage d'une personne pour le développement
-        :return: Prenom, nom, age et adresse de la personne
+        Permet de configurer l'affichage d'une personne pour le développement.
         """
-        return f"Person({self.firstName} {self.lastName} {self.age} {self.address})"
+        return (f"Person({self.firstName!r}, {self.lastName!r}, "
+                f"{self.age!r}, {self.address!r})")
