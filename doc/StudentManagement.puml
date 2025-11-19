@@ -1,0 +1,25 @@
+@startuml
+actor Eleve
+participant "Système d'inscription" as SI
+participant "Adresse"
+participant "Liste etudiants" as Carnet
+actor "Directeur"
+
+Eleve -> SI : saisir données personnelles
+SI -> Adresse : saisir adresse
+Adresse -> SI : valider format code postal
+Adresse --> SI : résultat validation
+
+alt Adresse valide
+    SI -> Directeur : demande d'autorisation
+    Directeur --> SI : autorisé / refusé
+    alt Autorisé
+        SI -> Carnet : ajouter élève et adresse
+        SI --> Eleve : confirmation d'inscription
+    else Refusé
+        SI --> Eleve : inscription refusée
+    end
+else Adresse invalide
+    SI --> Eleve : message d'erreur de saisie adresse
+end
+@enduml
