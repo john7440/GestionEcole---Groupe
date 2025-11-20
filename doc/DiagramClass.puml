@@ -12,7 +12,7 @@ abstract class  Person{
 class Address{
     - street : String
     - city : String
-    - zipCode: int
+    - zipCode: String
     - List<Person>
 
     + Address : Address()
