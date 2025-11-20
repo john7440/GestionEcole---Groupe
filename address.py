@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from dataclasses import dataclass, field
-from typing import List,Dict
+from typing import List
 import person
 
 @dataclass
 class Address:
     street: str
     city: str
-    zipcode: int
+    zipcode: str
     persons_list: List[person] = field(default_factory=list)
 
     def __str__(self) -> str:
