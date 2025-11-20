@@ -23,7 +23,7 @@ class Director extends Person{
     - List<Student>
     - List<Teacher>
     - List<Address>
-    + Student : Student()
+    + Director : Director()
 }
 
 class Student extends Person{
