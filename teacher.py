@@ -1,6 +1,6 @@
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime
 from person import Person
 from typing import ClassVar, List
 
@@ -9,7 +9,7 @@ class Teacher(Person):
     """
     Classe représentant un professeur.
     """
-    arrivalDate: datetime
+    arrivalDate: date
     teachers: ClassVar[List['Teacher']] = []
 
     def __str__(self) -> str:
