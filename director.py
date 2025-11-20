@@ -1,52 +1,20 @@
-
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import ClassVar, List
+
 from person import Person
+from course import Course
+from student import Student
+from teacher import Teacher
+from address import Address
 
 
 @dataclass
-class Student(Person):
+class Director(Person):
     """
     Classe représentant un directeur.
     """
-    id: int
-    students: ClassVar[List['Student']] = []
 
-    def __str__(self) -> str:
-        return f"{self.firstName} {self.lastName}, {self.age}, {self.address}, {self.id}"
-
-    def __repr__(self) -> str:
-        return f"Student({self.firstName}, {self.lastName}, {self.age}, {self.address}, {self.id})"
-
-    @classmethod
-    def create_student(cls, student: 'Student') -> 'Student':
-        """
-        Ajoute un objet Student à la liste des clients.
-        :param student: Instance de Student à ajouter
-        :return: L'objet Student ajouté
-        """
-        cls.students.append(student)
-        return student
-
-    @classmethod
-    def nb_students(cls) -> int:
-        """
-        Permet de l'affichage du nombre d'élèves passé ce jour
-        :return: nombre d'élèves passés ce jour
-        """
-        return len(cls.students)
-
-    @classmethod
-    def print_students(cls) -> None:
-        """
-        Affiche la liste des élèves passés aujourd'hui
-        :return: None
-        """
-        if not cls.students:
-            print("Il n'y a aucun eleve.")
-        else:
-            print(f"\nListe des {Student.nb_students()} eleves passés aujourd'hui :")
-            print("-" * 40)
-            for i, student in enumerate(cls.students, start=1):
-                print(f"{student.id}. {student.firstName} {student.lastName} - {student.age} ans - {student.address}")
-            print("-" * 40)
+    courses: List['Course'] = field(default_factory=list)
+    students: List['Student'] = field(default_factory=list)
+    teachers: List['Teacher'] = field(default_factory=list)
+    addresses: List['Address'] = field(default_factory=list)
