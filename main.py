@@ -67,8 +67,8 @@ def test_create_courses(teachers, students):
 
     course3 = Course(
         name="Physique fondamentale",
-        start_date=datetime(2025, 4, 1),
-        end_date=datetime(2025, 8, 31),
+        start_date=date(2025, 4, 1),
+        end_date=date(2025, 8, 31),
         teacher=teacher3,
         students=[student2]
     )
