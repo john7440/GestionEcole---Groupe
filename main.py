@@ -106,7 +106,11 @@ if __name__ == "__main__":
         firstName="Michel",
         lastName="Dupré",
         age=55,
-        address=director_address
+        address=director_address,
+        teachers=teacher_list,
+        students=student_list,
+        courses=course_list
+
     )
 
     print(f"Directeur : {director.firstName} {director.lastName}")
@@ -128,3 +132,12 @@ if __name__ == "__main__":
     print("\nCours restants :")
     for c in director.courses:
         print(f"- {c.name}")
+
+    print("\n--- Suppression d’un professeur ---\n")
+    remove_teacher = teacher_list[1]
+    print(f"Suppression de : {remove_teacher.firstName} {remove_teacher.lastName}")
+    director.remove_teacher(remove_teacher)
+
+    print("\nProfesseurs restants :")
+    for t in director.teachers:
+        print(f"- {t.firstName} {t.lastName}")
