@@ -15,6 +15,11 @@ class Course:
     teacher: Teacher
     students: List[Student] = field(default_factory=list)
 
+    def __post_init__(self):
+        for student in self.students:
+            if self not in student.courses:
+                student.courses.append(self)
+
     def __str__(self) -> str:
         # formate les dates sans les minutes et secondes
         start = self.start_date.strftime("%Y-%m-%d")
