@@ -10,8 +10,8 @@ from student import Student
 @dataclass
 class Course:
     name: str
-    start_date: datetime
-    end_date: datetime
+    start_date: date
+    end_date: date
     teacher: Teacher
     students: List[Student] = field(default_factory=list)
 
