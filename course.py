@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Définition de la classe Course représentant un cours et les inscriptions associées."""
 
-from datetime import datetime, date
+from datetime import date
 from dataclasses import dataclass, field
 from typing import List
 
@@ -37,7 +37,7 @@ class Course:
         """
         Met à jour automatiquement la liste des cours de chaque étudiant inscrit.
 
-        Pour chaque étudiant présent dans `students`, ajoute ce cours
+        Pour chaque étudiant présent dans `students', ajoute ce cours
         à l'attribut `courses` de l'étudiant s'il n'y figure pas déjà.
         """
         for student in self.students:
