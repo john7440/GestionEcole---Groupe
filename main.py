@@ -50,7 +50,7 @@ def test_create_courses(teachers, students):
     student1, student2, student3 = students
 
     course1 = Course(
-        name="Algèbre avancée",
+        name="Anglais",
         start_date=date(2025, 2, 1),
         end_date=date(2025, 6, 30),
         teacher=teacher1,
@@ -58,7 +58,7 @@ def test_create_courses(teachers, students):
     )
 
     course2 = Course(
-        name="Introduction à la programmation",
+        name="Mathématiques",
         start_date=date(2025, 3, 1),
         end_date=date(2025, 7, 31),
         teacher=teacher2,
@@ -66,7 +66,7 @@ def test_create_courses(teachers, students):
     )
 
     course3 = Course(
-        name="Physique fondamentale",
+        name="Physique",
         start_date=date(2025, 4, 1),
         end_date=date(2025, 8, 31),
         teacher=teacher3,
