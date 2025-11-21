@@ -33,3 +33,10 @@ class Director(Person):
             self.students.remove(student)
         else:
             print(f"L'étudiant {student.firstName} {student.lastName} n'est pas enregistré.")
+
+    def remove_course(self, course: Course):
+        """Supprime un cours s'il existe """
+        if course in self.courses:
+            self.courses.remove(course)
+        else:
+            print(f"Le cours {course.name} n'est pas enregistré.")

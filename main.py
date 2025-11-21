@@ -120,5 +120,11 @@ if __name__ == "__main__":
     for s in director.students:
         print(f"- {s.firstName} {s.lastName}")
 
+    print("\n--- Suppression d’un cours ---\n")
+    remove_course = course_list[1]
+    print(f"Suppression de : {remove_course.name}")
+    director.remove_course(remove_course)
 
-
+    print("\nCours restants :")
+    for c in director.courses:
+        print(f"- {c.name}")
