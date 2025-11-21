@@ -26,3 +26,10 @@ class Director(Person):
             self.students.append(student)
         else:
             print(f"L'étudiant {student.firstName} {student.lastName} est déjà enregistré.")
+
+    def remove_student(self, student: Student):
+        """Supprime un étudiant du directeur s'il est présent."""
+        if student in self.students:
+            self.students.remove(student)
+        else:
+            print(f"L'étudiant {student.firstName} {student.lastName} n'est pas enregistré.")

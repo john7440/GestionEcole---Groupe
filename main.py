@@ -3,6 +3,7 @@
 from datetime import datetime, date
 
 from address import Address
+from director import Director
 from student import Student
 from teacher import Teacher
 from course import Course   # <-- Manquait dans ton code
@@ -91,3 +92,33 @@ if __name__ == "__main__":
     course_list = test_create_courses(teacher_list, student_list)
     for course in course_list:
         print(course)
+
+
+    print("\n--- Création du directeur ---\n")
+
+    director_address = Address(
+        street="10 rue des jonquilles",
+        city="Paris",
+        zipcode="75000"
+    )
+
+    director = Director(
+        firstName="Michel",
+        lastName="Dupré",
+        age=55,
+        address=director_address
+    )
+
+    print(f"Directeur : {director.firstName} {director.lastName}")
+
+    print("\n--- Suppression d’un étudiant ---\n")
+    remove_student = student_list[1]
+    print(f"Suppression de : {remove_student.firstName} {remove_student.lastName}")
+    director.remove_student(remove_student)
+
+    print("\nÉtudiants restants :")
+    for s in director.students:
+        print(f"- {s.firstName} {s.lastName}")
+
+
+
