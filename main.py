@@ -51,16 +51,16 @@ def test_create_courses(teachers, students):
 
     course1 = Course(
         name="Algèbre avancée",
-        start_date=datetime(2025, 2, 1),
-        end_date=datetime(2025, 6, 30),
+        start_date=date(2025, 2, 1),
+        end_date=date(2025, 6, 30),
         teacher=teacher1,
         students=[student1, student2, student3]
     )
 
     course2 = Course(
         name="Introduction à la programmation",
-        start_date=datetime(2025, 3, 1),
-        end_date=datetime(2025, 7, 31),
+        start_date=date(2025, 3, 1),
+        end_date=date(2025, 7, 31),
         teacher=teacher2,
         students=[student1, student3]
     )
